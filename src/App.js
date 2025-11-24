@@ -12,14 +12,7 @@ function App() {
       {num:number, color:'#'+Math.floor(Math.random()*0xFFFFFF).toString(16), id:++countRef.current} ] );
   }
   const onRemoveList = (id) => {
-    let copyList = [];
-    for(let i = 0 ; i < countList.length ; ++i)
-    {
-      if( i !== id)
-        copyList.push(countList[i]);
-    }
-
-    setCountList( countList.filter((v)=> v.id!==id) );
+    setCountList( countList.filter((v)=> v.id !==id ) );
   }
   return (
   <div>
