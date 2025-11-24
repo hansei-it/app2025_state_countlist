@@ -11,6 +11,9 @@ function App() {
     setCountList( [ ...countList , 
       {num:number, color:'#'+Math.floor(Math.random()*0xFFFFFF).toString(16), id:++countRef.current} ] );
   }
+  const onUpdateList = (id, num) => {
+    setCountList( countList.map((v,idx)=> v.id==id ? {...v, num:num}:v ) );
+  }
   const onRemoveList = (id) => {
     setCountList( countList.filter((v)=> v.id !==id ) );
   }
@@ -18,7 +21,7 @@ function App() {
   <div>
     <h1> Count 컴포넌트 </h1>
     <CountInput onAddList={onAddList}/>
-    <CountList countList={countList} onRemoveList={onRemoveList}/>
+    <CountList countList={countList} onUpdateList={onUpdateList} onRemoveList={onRemoveList}/>
   </div> 
    );
 }
