@@ -9,7 +9,7 @@ const CountItem = ({ item, onUpdateList, onRemoveList})=>
         id : {item.id} :
         {
             updateCount ? 
-                <input type="text" value={number} onChange={(e)=>setNumber(e.target.value)} style={{ textAlign: 'center', width: 50}}/> :
+                <input type="number" value={number} onChange={(e)=>setNumber(e.target.value)} style={{ textAlign: 'center', width: 50}}/> :
                 <div style={{ textAlign: 'center', width: 50, backgroundColor: item.color }}>{item.num}</div>  
         }
         {
