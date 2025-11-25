@@ -14,7 +14,7 @@ const CountItem = ({ item, onUpdateList, onRemoveList})=>
         }
         {
             updateCount ? 
-            <button onClick={() => { setUpdateCount(false); onUpdateList(item.id,number); }}> 확인 </button> :
+            <button onClick={() => { setUpdateCount(false); onUpdateList({...item, num:number}); }}> 확인 </button> :
             <button onClick={() => setUpdateCount(true)}> 수정 </button>
         }
 
