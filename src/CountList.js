@@ -1,13 +1,17 @@
 import CountItem from './CountItem';
 
 const CountList = ({countList, onUpdateList, onRemoveList}) => {
-
     return (
-        <div >
+        <div className="count-list">
             {
-                countList.map((v, idx) => {
-                    return <CountItem item={v} onUpdateList={onUpdateList} onRemoveList={onRemoveList}/>;
-                })
+                countList.map((v) => (
+                    <CountItem 
+                        key={v.id} 
+                        item={v} 
+                        onUpdateList={onUpdateList} 
+                        onRemoveList={onRemoveList}
+                    />
+                ))
             }
         </div>
     );
