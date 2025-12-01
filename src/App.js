@@ -1,6 +1,5 @@
-import {useState, useRef, useReducer} from 'react';
-import CountInput from './CountInput';
-import CountList from './CountList';
+import {useRef, useReducer} from 'react';
+import CountComponent from './CounterComponent'
 import Lifecycle from './Lifecycle/LifecycleApp';
 
 function reducer(state, action)
@@ -37,9 +36,8 @@ function App() {
   }
   return (
   <div>
-    <h1> Count 컴포넌트 </h1>
-    <CountInput onAddList={onAddList}/>
-    <CountList countList={countState} onUpdateList={onUpdateList} onRemoveList={onRemoveList}/>
+    <CountComponent countState={countState} onAddList={onAddList} 
+      onUpdateList={onUpdateList} onRemoveList={onRemoveList}/>
     <hr/>
     <Lifecycle/>
   </div> 

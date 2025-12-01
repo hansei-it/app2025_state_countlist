@@ -6,7 +6,7 @@ const CountList = ({countList, onUpdateList, onRemoveList}) => {
         <div >
             {
                 countList.map((v, idx) => {
-                    return <CountItem item={v} onUpdateList={onUpdateList} onRemoveList={onRemoveList}/>;
+                    return <CountItem key={v.id} item={v} onUpdateList={onUpdateList} onRemoveList={onRemoveList}/>;
                 })
             }
         </div>
