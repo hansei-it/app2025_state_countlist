@@ -5,7 +5,8 @@ const CountItem = ({ item, onUpdateList, onRemoveList})=>
     const [number, setNumber] = useState(item.num);
     const [updateCount, setUpdateCount] = useState(false);
 
-    return (<div key={item.id} style={{ display: 'flex' }}>
+    return (
+    <div key={item.id} style={{ display: 'flex' }}>
         id : {item.id} :
         {
             updateCount ? 
@@ -19,7 +20,8 @@ const CountItem = ({ item, onUpdateList, onRemoveList})=>
         }
 
         <button onClick={() => onRemoveList(item.id)}> 삭 제 </button>
-    </div>);
+    </div>
+    );
 }
 
 export default CountItem;

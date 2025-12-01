@@ -1,6 +1,8 @@
 import {useRef, useReducer} from 'react';
 import CountComponent from './CounterComponent'
 import Lifecycle from './Lifecycle/LifecycleApp';
+import {Link, Routes, Route} from 'react-router-dom';
+import CounterComponent from './CounterComponent';
 
 function reducer(state, action)
 {
@@ -36,10 +38,15 @@ function App() {
   }
   return (
   <div>
-    <CountComponent countState={countState} onAddList={onAddList} 
-      onUpdateList={onUpdateList} onRemoveList={onRemoveList}/>
+    <nav >
+      <Link to="/" style={{ marginRight: 10 }}>CountComponent</Link>
+      <Link to="/lifecycle">About</Link>
+    </nav>
+    <Routes>
+      <Route path="/" element={<div> CounterComponent </div>} />
+      <Route path="/lifecycle" element={<div> LifeCycle </div>}/>
+    </Routes>
     <hr/>
-    <Lifecycle/>
   </div> 
    );
 }
