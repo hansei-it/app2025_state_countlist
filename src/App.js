@@ -3,6 +3,7 @@ import CountComponent from './CounterComponent'
 import LifecycleComponet from './Lifecycle/LifecycleApp';
 import {Link, Routes, Route} from 'react-router-dom';
 import CounterComponent from './CounterComponent';
+import TodoApp from './Todo/TodoApp';
 
 function reducer(state, action)
 {
@@ -39,14 +40,16 @@ function App() {
   return (
   <div>
     <nav style={{backgroundColor:'#Efefef', padding:20} }>
-      <Link to="/" style={{ marginRight: 10 }}>CountComponent</Link>
-      <Link to="/lifecycle">LifecycleComponet</Link>
+      <Link to="/" style={{ marginRight: 10 }}>1. CountComponent</Link>
+      <Link to="/lifecycle" style={{ marginRight: 10 }}>2. LifecycleComponet</Link>
+      <Link to="/todos">3. Todo List (API)</Link>
     </nav>
 
     <Routes>
       <Route path="/" element={<CounterComponent countState={countState} onAddList={onAddList} 
         onUpdateList={onUpdateList} onRemoveList={onRemoveList}/>} />
       <Route path="/lifecycle" element={<LifecycleComponet/>}/>
+      <Route path="/todos" element={<TodoApp/>} />
     </Routes>
     <hr/>
     
